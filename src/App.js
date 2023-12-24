@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Intro from './sections/intro';
+import About from './sections/about';
+import SkillSection from './sections/skill_section';
+import ProjectSection from './sections/project_section';
+import Footer from './sections/footer';
+import { useRef } from 'react';
 
 function App() {
+  const skillRef = useRef();
+  const projectRef = useRef();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Intro skillRef={skillRef} projectRef={projectRef} />
+      <About />
+      <SkillSection reference={skillRef} />
+      <ProjectSection reference={projectRef} />
+      <Footer />
     </div>
   );
 }
